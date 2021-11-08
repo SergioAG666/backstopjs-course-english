@@ -1,0 +1,91 @@
+{
+  "id": "Cuenta de Ahorros BPOP",
+  "viewports": [
+    {
+      "label": "Iphone 5",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "label": "Tablet",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Initial State",
+      "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/auth",
+      "delay": 1000,
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Check VIP",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 1000,
+      "clickSelector" : "#vip",
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Check boxes",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 1000,
+      "clickSelectors" : ["#friend","#publication","#social-media"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Select Tickets",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 1000,
+      "onReadyScript": "puppet/custom/selectTickets.js",
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Invalid email",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 1000,
+      "onReadyScript": "puppet/custom/typeInvalidEmail.js",
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Fill all mandatory fields",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 2000,
+      "onReadyScript": "puppet/custom/fillMandatoryFields.js",
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Successfully submits the form",
+      "url": "https://ticketbox-backstopjs-tat.s3.eu-central-1.amazonaws.com/index.html",
+      "delay": 2000,
+      "onReadyScript": "puppet/custom/successfullySubmitForm.js",
+      "hideSelectors": [".success span"],
+      "misMatchThreshold" : 0,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {  
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

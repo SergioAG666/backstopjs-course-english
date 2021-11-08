@@ -5,21 +5,6 @@
       "label": "Iphone 5",
       "width": 320,
       "height": 568
-    },
-    {
-      "label": "Android",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "label": "Pixel",
-      "width": 411,
-      "height": 731
-    },
-    {
-      "label": "Tablet",
-      "width": 1024,
-      "height": 768
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
@@ -28,7 +13,6 @@
     {
       "label": "Fill mandatory fields",
       "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/auth",
-      "referenceUrl": "https://www.bancopopular.com.co/cuenta-de-ahorros/autogestion/auth",
       "delay": 8000,
       "onReadyScript": "puppet/custom/fillMandatoryFields.js",
       "hideSelectors": [".circle-blue",".fc-widget-normal"],
@@ -38,7 +22,6 @@
     {
       "label": "Successfully submits the form",
       "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/auth",
-      "referenceUrl": "https://www.bancopopular.com.co/cuenta-de-ahorros/autogestion/auth",
       "delay": 8000,
       "onReadyScript": "puppet/custom/successfullySubmitForm.js",
       "hideSelectors": [".circle-blue",".fc-widget-normal"],
@@ -58,7 +41,7 @@
     {
       "label": "NOMINA",
       "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/account-type",
-      "delay": 5000,
+      "delay": 4000,
       "onBeforeScript": "puppet/custom/accountTypeSessionStore.js",
       "onReadyScript": "puppet/custom/accountNominaForm.js",
       "hideSelectors": [".fc-widget-normal"],
@@ -68,7 +51,7 @@
     {
       "label": "AHORROS",
       "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/account-type",
-      "delay": 5000,
+      "delay": 4000,
       "onBeforeScript": "puppet/custom/accountTypeSessionStore.js",
       "onReadyScript": "puppet/custom/accountAhorroForm.js",
       "hideSelectors": [".fc-widget-normal"],
@@ -78,7 +61,7 @@
     {
       "label": "DIAMANTE",
       "url": "https://d1mxnl3uy8al6g.cloudfront.net/cuenta-de-ahorros/autogestion/account-type",
-      "delay": 5000,
+      "delay": 4000,
       "onBeforeScript": "puppet/custom/accountTypeSessionStore.js",
       "onReadyScript": "puppet/custom/accountPensionForm.js",
       "hideSelectors": [".fc-widget-normal"],

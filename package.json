@@ -9,15 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wlsf82/backstopjs-course-english.git"
+    "url": "https://github.com/avaldigitallabs/backstopjs-ahorros-bpop"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sergio Alonso ",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wlsf82/backstopjs-course-english/issues"
-  },
-  "homepage": "https://github.com/wlsf82/backstopjs-course-english#readme",
+  "homepage": "https://github.com/avaldigitallabs/backstopjs-ahorros-bpop#readme",
   "dependencies": {
     "casperjs": "^1.1.4"
   }
